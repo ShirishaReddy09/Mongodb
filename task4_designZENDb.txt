@@ -1,0 +1,358 @@
+>>> use chubb;
+switched to db chubb
+chubb> 
+//users
+>>> db.users.insertMany([
+...   {
+...     s_id:"1",
+...     s_name:"siri",
+...     s_email:"siri@gmail.com",
+...              
+...   },
+...     {
+...     s_id:"2",
+...     s_name:"sweety",
+...     s_email:"sweety@gmail.com"
+...    },
+...      {
+...     s_id:"3",
+...     s_name:"mouni",
+...     s_email:"mouni@gmail.com"
+...     },
+...   {
+...     s_id:"4",
+...     s_name:"sabbu",
+...     s_email:"sabbu@gmail.com"
+...   },
+...   {
+...     s_id:"5",
+...     s_name:"varma",
+...     s_email:"varma@gmail.com"
+...   },
+...   {
+...     s_id:"6",
+...     s_name:"pooji",
+...     s_email:"pooji@gmail.com"
+...   }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("613f3b6e08b8bb8580b505dc"),
+    '1': ObjectId("613f3b6e08b8bb8580b505dd"),
+    '2': ObjectId("613f3b6e08b8bb8580b505de"),
+    '3': ObjectId("613f3b6e08b8bb8580b505df"),
+    '4': ObjectId("613f3b6e08b8bb8580b505e0"),
+    '5': ObjectId("613f3b6e08b8bb8580b505e1")
+  }
+}
+
+
+
+//codekata
+chubb> 
+>>> db.codekata.insertMany([ 
+...    { 
+...     s_email:"siri@gmail.com" ,
+...     s_name:"siri",
+...     Num_prblms_solved:"30",
+...     coins:200
+...     },
+...    { 
+...     s_email:"sweety@gmail.com",
+...     s_name:"sweety",
+...     Num_prblms_solved:"40",
+...     coins:300
+...    },
+...    { 
+...     s_email:"mouni@gmail.com",
+...     s_name:"mouni",
+...     Num_prblms_solved:"45",
+...     coins:350
+...    },
+...    { 
+...     s_email:"sabbu@gmail.com",
+...     s_name:"sabbu",
+...     Num_prblms_solved:"50",
+...     coins:400
+...    },
+...    { 
+...     s_email:"varma@gmail.com",
+...     s_name:"varma",
+...    Num_prblms_solved:"55",
+...     coins:450
+...    },
+...    { 
+...     s_email:"pooji@gmail.com",
+...     s_name:"pooji",
+...     Num_prblms_solved:"60",
+...     coins:500
+...    }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("613f3ba208b8bb8580b505e2"),
+    '1': ObjectId("613f3ba208b8bb8580b505e3"),
+    '2': ObjectId("613f3ba208b8bb8580b505e4"),
+    '3': ObjectId("613f3ba208b8bb8580b505e5"),
+    '4': ObjectId("613f3ba208b8bb8580b505e6"),
+    '5': ObjectId("613f3ba208b8bb8580b505e7")
+  }
+}
+
+
+
+
+//attendance
+chubb> 
+>>> db.attendance.insertMany([
+...   {
+...    s_ids:[1,2,3,4,5,6],
+...    date:new ISODate("2020-10-15"),
+...    attendance:"present"
+...   },
+...   {
+...    s_ids:[3,4],
+...    date:new ISODate("2020-10-18"),
+...    attendance:"present"
+...   },
+...   {
+...    s_ids:[1,2,5,6],
+...    date:new ISODate("2020-10-18"),
+...    attendance:"absent"
+...   },
+...   {
+...    s_ids:[5,6],
+...    date:new ISODate("2020-10-26"),
+...    attendance:"present"
+...   },
+...   {
+...    s_ids:[2,4,5,6],
+... date:new ISODate("2020-10-30"),
+...    attendance:"present"
+...   }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("613f3c7b08b8bb8580b505e8"),
+    '1': ObjectId("613f3c7b08b8bb8580b505e9"),
+    '2': ObjectId("613f3c7b08b8bb8580b505ea"),
+    '3': ObjectId("613f3c7b08b8bb8580b505eb"),
+    '4': ObjectId("613f3c7b08b8bb8580b505ec")
+  }
+}
+
+
+
+//topics_tasks
+chubb> 
+>>> db.topics_tasks.insertMany([
+...   {
+...     topic_id:"1",
+...     topic_name:"sql_basics",
+...     taught_date:new ISODate("2020-10-15"),
+...     task:"create_zen class_db",
+...     submissions_s_ids:[1,2,3,4,5,6]
+...   },
+... 
+...   {
+...     topic_id:"2",
+...     topic_name:"sql_joins",
+...     taught_date:new ISODate("2020-10-18"),
+...     task:"create_zen class_db_eer",
+...     submissions_s_ids:[3,4]
+...   },
+... 
+...   {
+...     
+...     topic_id:"3",
+...     topic_name:"mongodb_basics",
+...     taught_date:new ISODate("2020-10-26"),
+...     task:"product_queries_mongodb",
+...     submissions_s_ids:[5,6]
+...   },
+... 
+...   {
+...     topic_id:"4",
+...     topic_name:"mongodb_operators",
+...     taught_date:new ISODate("2020-10-30"),
+...     task:"create_zen class_db_mongodb",
+...     submissions_s_ids:[2,4,5,6]
+...   }
+... ]
+... );
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("613f3d2b08b8bb8580b505f1"),
+    '1': ObjectId("613f3d2b08b8bb8580b505f2"),
+    '2': ObjectId("613f3d2b08b8bb8580b505f3"),
+    '3': ObjectId("613f3d2b08b8bb8580b505f4")
+  }
+}
+
+
+
+//company_drives
+chubb> 
+>>> db.cmpnydrives.insertMany([
+...   {
+...     cmpny_name:"chubb",
+...     drive_date:new ISODate("2020-10-18"),
+...     students_appeared:["siri","varma","pooja"]
+...   },
+... 
+...   {
+...     cmpny_name:"tcs",
+...     drive_date:new ISODate("2020-10-21"),
+...     students_appeared:["sweety","mouni","pooja"]
+...   },
+... 
+...   {
+...     cmpny_name:"infosys",
+...     drive_date:new ISODate("2020-10-23"),
+...     students_appeared:["sabbu","varma"]
+...   },
+... 
+...   {
+...     cmpny_name:"HCL",
+...     drive_date:new ISODate("2020-10-26"),
+...     students_appeared:["sweety","mouni"]
+...   }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("613f3d8a08b8bb8580b505f5"),
+    '1': ObjectId("613f3d8a08b8bb8580b505f6"),
+    '2': ObjectId("613f3d8a08b8bb8580b505f7"),
+    '3': ObjectId("613f3d8a08b8bb8580b505f8")
+  }
+}
+
+
+
+//mentors
+chubb> 
+>>> db.mentors.insertMany([
+...    {
+...     mentor_name:"john",
+...     mentees:[2,4,5]
+...    },
+... 
+...    {
+...     mentor_name:"bob",
+...     mentees:[1,3,6]
+...    }]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("613f3dba08b8bb8580b505f9"),
+    '1': ObjectId("613f3dba08b8bb8580b505fa")
+  }
+}
+
+
+
+
+//Find all the topics and tasks which are thought in the month of October
+chubb> 
+chubb> 
+>>> db.topics_tasks.find({$and:[{taught_date:{$gte:ISODate("2020-10-01")}},{taught_date:{$lte:ISODate("2020-10-31")}}]},{_id:0,topic_name:1,task:1,taught_date:1});
+[
+  {
+    topic_name: 'sql_basics',
+    taught_date: ISODate("2020-10-15T00:00:00.000Z"),
+    task: 'create_zen class_db'
+  },
+  {
+    topic_name: 'sql_joins',
+    taught_date: ISODate("2020-10-18T00:00:00.000Z"),
+    task: 'create_zen class_db_eer'
+  },
+  {
+    topic_name: 'mongodb_basics',
+    taught_date: ISODate("2020-10-26T00:00:00.000Z"),
+    task: 'product_queries_mongodb'
+  },
+  {
+    topic_name: 'mongodb_operators',
+    taught_date: ISODate("2020-10-30T00:00:00.000Z"),
+    task: 'create_zen class_db_mongodb'
+  }
+]
+
+
+
+
+
+//Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+chubb> 
+>>> db.cmpnydrives.find({$and:[{drive_date:{$gte:ISODate("2020-10-15")}},{drive_date:{$lte:ISODate("2020-10-31")}}]},{cmpny_name:1,drive_date:1,_id:0});
+[
+  { cmpny_name:"chubb",drive_date: ISODate("2020-10-18T00:00:00.000Z") },
+  { cmpny_name:"tcs",drive_date: ISODate("2020-10-21T00:00:00.000Z") },
+  { cmpny_name:"infosys",drive_date: ISODate("2020-10-23T00:00:00.000Z") },
+  { cmpny_name:"HCL",drive_date: ISODate("2020-10-26T00:00:00.000Z") }
+]
+
+
+
+
+//Find all the company drives and students who are appeared for the placement.
+chubb> 
+>>> db.cmpnydrives.find({},{cmpny_name:1,students_appeared:1,_id:0});
+[
+  {
+    cmpny_name: 'chubb',
+    students_appeared: [ 'siri', 'varma', 'pooja' ]
+  },
+  {
+    cmpny_name: 'tcs',
+    students_appeared: [ 'sweety', 'mouni', 'pooja' ]
+  },
+  { cmpny_name: 'infosys', students_appeared: [ 'sabbu', 'varma' ] },
+  { cmpny_name: 'HCL', students_appeared: [ 'sweety', 'mouni' ] }
+]
+
+
+
+//Find the number of problems solved by the user in codekata
+chubb> 
+>>> db.codekata.find({},{s_name:1,_id:0,Num_prblms_solved:1} );
+[
+  { s_name: 'siri', Num_prblms_solved: '30' },
+  { s_name: 'sweety', Num_prblms_solved: '40' },
+  { s_name: 'mouni', Num_prblms_solved: '45' },
+  { s_name: 'sabbu', Num_prblms_solved: '50' },
+  { s_name: 'varma', Num_prblms_solved: '55' },
+  { s_name: 'pooji', Num_prblms_solved: '60' }
+]
+
+
+
+//Find all the mentors with who has the mentee's count more than 15
+chubb> 
+>>> db.mentors.find({$where:"this.mentees.length>15"},{mentor_name:1,_id:0});
+
+
+//Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+>>> db.attendance.find({$and:[{date:{$gte:ISODate("2020-10-15")}},{date:{$lte:ISODate("2020-10-31")}},{attendance:{$ne:"present"}}]},{_id:0,s_id:1,attendance:1,s_ids:1});
+[ { s_ids: [ 1, 2, 5, 6 ], attendance: 'absent' } ]
+
+?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
